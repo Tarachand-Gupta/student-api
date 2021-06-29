@@ -1,0 +1,39 @@
+{
+  "_id": { "$oid": "60819e9181b0f4f41060eb03" },
+  "conversations": [
+    {
+      "conversationId": "ichsiughsrng",
+      "participentMsgids": ["amit007msgid", "rohit007msgid"],
+      "messages": [
+        {
+          "fromParticipentMsgid": "24042010rohit001",
+          "isDeletedFor": ["participent's msg ids"],
+          "isSeen": true,
+          "isMediaMessage": true,
+          "mediaLink": "link",
+          "mediaTag": ["tag1", "tag2"],
+          "mediaScopeLevel": "0/1/2/3/4",
+          "MessageText": "ichsiughsrng",
+          "messageDate": "mongoSystemDate"
+        }
+      ]
+    },
+    {
+      "conversationId": "ichsiughsrng2",
+      "participentMsgids": ["24042010rohit001", "20042010tara001"],
+      "messages": [
+        {
+          "fromParticipentMsgid": "24042010rohit001",
+          "isDeletedFor": ["participent's msg ids"],
+          "isSeen": true,
+          "isMediaMessage": true,
+          "mediaLink": "link",
+          "mediaTag": ["tag1", "tag2"],
+          "mediaScopeLevel": "0/1/2/3/4",
+          "MessageText": "ichsiughsrng",
+          "messageDate": "mongoSystemDate"
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,36 @@
+{
+  "_id": { "$oid": "60819e9181b0f4f41060eb03" },
+  "date": "24042021",
+  "users": [
+    {
+      "user": "20042010tara001",
+      "chats": [
+        {
+          "participentMsgid": "24042010rohit001",
+          "conversationId": "ichsiughsrng",
+          "conversationDate": "24042021"
+        },
+        {
+          "participentMsgid": "24042010amit001",
+          "conversationId": "ichsiughsrng2",
+          "conversationDate": "30042021"
+        }
+      ]
+    },
+    {
+      "user": "24042010rohit001",
+      "chats": [
+        {
+          "participentMsgid": "24042010amit001",
+          "conversationId": "ichsiughsrng",
+          "conversationDate": "24042021"
+        },
+        {
+          "participentMsgid": "20042010tara001",
+          "conversationId": "ichsiughsrng",
+          "conversationDate": "24042021"
+        }
+      ]
+    }
+  ]
+}
