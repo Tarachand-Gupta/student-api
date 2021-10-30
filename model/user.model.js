@@ -1,30 +1,79 @@
 const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
+const bcrypt = require("bcryptjs");
+const crypto = require("crypto");
+const jwt = require("jsonwebtoken");
 
-let UserSchema = new Schema({
-  _id: mongoose.Schema.Types.ObjectId,
-  firstname: { type: String, required: true },
-  middlename: { type: String, required: true },
-  lastname: { type: String, required: true },
-  userprofile: { type: String, required: true },
-  gender: { type: String, required: true },
-  mobileno: { type: String, required: true },
-  dob: { type: Date, required: true },
-  email: { type: String, required: true },
-  password: { type: String, required: true },
-  qualification: { type: String, required: true },
-  stream: { type: String, required: true },
-  college: { type: String, required: true },
-  branch: { type: String, required: true },
-  semester: { type: String, required: true },
-  areaofintrest: { type: String, required: true },
-  passwordKey: { type: Buffer, required: true },
-  online: { type: String },
-  socketId: { type: String },
-  createdOn: { type: Date, default: Date.now },
-  messageId: { type: String, required: true },
-  scope: [{}]
+let UserSchema = new Schema(
+  {
+    firstname: { type: String, required: true },
+    middlename: { type: String, required: false },
+    lastname: { type: String, required: false },
+    userprofile: { type: String, required: false },
+    gender: { type: String, required: false },
+    mobileno: { type: String, required: false },
+    dob: { type: Date, required: false },
+    email: {
+      type: String,
+      required: false,
+      unique: true,
+      match: [
+        /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/,
+        "please provide a valid email",
+      ],
+    },
+    password: {
+      type: String,
+      required: true,
+      select: false,
+    },
+    resetPasswordToken: String,
+    resetPasswordExpire: Date,
+    qualification: { type: String, required: false },
+    stream: { type: String, required: false },
+    college: { type: String, required: false },
+    branch: { type: String, required: false },
+    semester: { type: String, required: false },
+    areaofintrest: { type: String, required: false },
+    passwordKey: { type: Buffer, required: false },
+    online: { type: String, required: false },
+    socketId: { type: String, required: false },
+    createdOn: { type: Date, default: Date.now },
+    messageId: { type: String, required: false },
+    scope: [{}],
+  },
+  { timestamps: true }
+);
+UserSchema.pre("save", async function (next) {
+  if (!this.isModified("password")) {
+    next();
+  }
+  const salt = await bcrypt.genSalt(10);
+  this.password = await bcrypt.hash(this.password, salt);
+  next();
 });
+
+UserSchema.methods.matchPassword = async function (password) {
+  return await bcrypt.compare(password, this.password);
+};
+
+UserSchema.methods.getSignedToken = function () {
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
+    expiresIn: process.env.JWT_EXPIRE,
+  });
+};
+
+UserSchema.methods.getResetPasswordToken = function () {
+  const resetToken = crypto.randomBytes(20).toString("hex");
+  this.resetPasswordToken = crypto
+    .createHash("sha256")
+    .update(resetToken)
+    .digest("hex");
+
+  this.resetPasswordExpire = Date.now() + 10 * (60 * 1000);
+
+  return resetToken;
+};
 
 // Export the model
 module.exports = User = mongoose.model("users", UserSchema);
