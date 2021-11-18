@@ -68,7 +68,7 @@ io.on("connection", (socket) => {
 
 const uri =
   process.env.ATLAS_URI ||
-  "mongodb+srv://";
+  "mongodb+srv://tara:tara2784@cluster0-ctwtw.mongodb.net/test?authSource=admin&replicaSet=Cluster0-shard-0&w=majority&readPreference=primary&appname=MongoDB%20Compass&retryWrites=true&ssl=true";
 
 mongoose.connect(uri, {
   useNewUrlParser: true,
