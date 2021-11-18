@@ -1,0 +1,61 @@
+{
+  "CollegeID": {
+    "type": "String"
+  },
+  "College_Details": {
+    "type": "String"
+  },
+  "Structure": {
+    "Stream": {
+      
+        "Stream_name": {
+            "type": "String"
+        },
+        "Stream_Code": {
+            "type": "String"
+        },
+        "Stream_NoticeBoard_Id": {
+            "type": "String"
+        },
+        "isBranched": {
+            "type": "Boolean"
+        },
+        "Branches": {
+            "Branch": {
+                "type": "String"
+            },
+            "Branch_Code": {
+                "type": "String"
+            },
+            "Branch_NoticeBoard_Id": {
+                "type": "String"
+            },
+            "SemesterCount": {
+                "type": "Number"
+            },
+            "Semesters": {
+                "Semester": {
+                    "type": "Number"
+                },
+                "Data": {
+                    "type": "String"
+                },
+                "AllotedClassCode": {
+                    "type": "String"
+                
+                }
+            }
+        }
+    },
+    "Teachers": {
+      "type": [
+        "Mixed"
+      ]
+    },
+    "Roles": {
+      "type": [
+        "Mixed"
+      ]
+    }
+  }
+}

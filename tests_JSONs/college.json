@@ -26,105 +26,8 @@
                 "AllotedClassCode": "CollegeCode_Stream_Branch_Year_Sem"
               }
             ]
-          },
-          {
-            "Branch": "Civil",
-            "Branch_Code": "Civil",
-            "Branch_NoticeBoard_Id": "NoticeBoardId:456fsr5f4g4rg4",
-            "SemesterCount": 8,
-            "Semesters": [
-              {
-                "Semester": 1,
-                "Data": "Any Default Data",
-                "AllotedClassCode": "CollegeCode_Stream_Branch_Year_Sem"
-              },
-              {
-                "Semester": 2,
-                "Data": "Any Default Data",
-                "AllotedClassCode": "CollegeCode_Stream_Branch_Year_Sem"
-              }
-            ]
-          },
-          {
-            "Branch": "Computer Engineering",
-            "Branch_Code": "CO",
-            "Branch_NoticeBoard_Id": "NoticeBoardId:456fsr5f4g4rg4",
-            "SemesterCount": 8,
-            "Semesters": [
-              {
-                "Semester": 1,
-                "Data": "Any Default Data",
-                "AllotedClassCode": "CollegeCode_Stream_Branch_Year_Sem"
-              },
-              {
-                "Semester": 2,
-                "Data": "Any Default Data",
-                "AllotedClassCode": "CollegeCode_Stream_Branch_Year_Sem"
-              }
-            ]
           }
-        ]
-      },
-      {
-        "Stream_name": "Master of Business Administration",
-        "Stream_Code": "MBA",
-        "Stream_NoticeBoard_Id": "NoticeBoardId:456fsr5f4g4rg4",
-        "isBranched": true,
-        "Branches": [
-          {
-            "Branch": "MBA in Finance",
-            "Branch_Code": "Finance",
-            "Branch_NoticeBoard_Id": "NoticeBoardId:456fsr5f4g4rg4",
-            "SemesterCount": 8,
-            "Semesters": [
-              {
-                "Semester": 1,
-                "Data": "Any Default Data",
-                "AllotedClassCode": "CollegeCode_Stream_Branch_Year_Sem"
-              },
-              {
-                "Semester": 2,
-                "Data": "Any Default Data",
-                "AllotedClassCode": "CollegeCode_Stream_Branch_Year_Sem"
-              }
-            ]
-          },
-          {
-            "Branch": "MBA in Human Resource Management",
-            "Branch_Code": "HR Management",
-            "Branch_NoticeBoard_Id": "NoticeBoardId:456fsr5f4g4rg4",
-            "SemesterCount": 8,
-            "Semesters": [
-              {
-                "Semester": 1,
-                "Data": "Any Default Data",
-                "AllotedClassCode": "CollegeCode_Stream_Branch_Year_Sem"
-              },
-              {
-                "Semester": 2,
-                "Data": "Any Default Data",
-                "AllotedClassCode": "CollegeCode_Stream_Branch_Year_Sem"
-              }
-            ]
-          },
-          {
-            "Branch": "MBA in Information Technology",
-            "Branch_Code": "IT Management",
-            "Branch_NoticeBoard_Id": "NoticeBoardId:456fsr5f4g4rg4",
-            "SemesterCount": 8,
-            "Semesters": [
-              {
-                "Semester": 1,
-                "Data": "Any Default Data",
-                "AllotedClassCode": "CollegeCode_Stream_Branch_Year_Sem"
-              },
-              {
-                "Semester": 2,
-                "Data": "Any Default Data",
-                "AllotedClassCode": "CollegeCode_Stream_Branch_Year_Sem"
-              }
-            ]
-          }
+          
         ]
       }
     ],
@@ -137,16 +40,6 @@
         "Branch_Code": "IT",
         "Designation": "Assistant Professor",
         "Access_Roles": ["Teacher"],
-        "Data": "Other Required Data"
-      },
-      {
-        "Teacher_Id": "CollegeCode_UniqueCode",
-        "id_In_teacherDB": "gsgfdrg5dfhg5hfghfd4h5hhfdg5",
-        "Teacher_Name": "Yogita Mane",
-        "Stream_Code": "BE",
-        "Branch_Code": "IT",
-        "Designation": "Assistant Professor",
-        "Access_Roles": ["HOD", "Teacher"],
         "Data": "Other Required Data"
       }
     ],
