@@ -91,6 +91,9 @@ app.use("/teacherAction", teacherAction);
 app.use("/globalService", globalService);
 app.use("/newAuth", require("./routes/newAuth"));
 app.use("/private", require("./routes/private"));
+app.get("/", (req, res) => {
+  res.send("Student API !");
+});
 // const TEST = async () => {
 //   payload = {
 //     _id: { $oid: "5e3536e1b29cf92840171f3e" }
