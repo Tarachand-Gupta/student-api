@@ -66,7 +66,10 @@ io.on("connection", (socket) => {
 
 //========Socket =======END==========
 
-const uri = process.env.ATLAS_URI;
+const uri =
+  process.env.ATLAS_URI ||
+  "mongodb+srv://";
+
 mongoose.connect(uri, {
   useNewUrlParser: true,
   useCreateIndex: true,
